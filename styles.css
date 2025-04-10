@@ -1,0 +1,517 @@
+/* General Styles */
+body {
+    font-family: 'Hoefler Text', Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.navbar .logo a {
+    display: inline-block;
+}
+
+.navbar .logo-img {
+    width: 120px; /* Adjust logo size */
+    height: auto;
+}
+
+.navbar ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a {
+    color: #1a5b8d; /* Primary accent color */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/SATEG Deployment in Antarctic Landscape.png'); /* Replace with the hero image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #1a5b8d;
+    padding: 12px 24px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 5%;
+    background-color: #fff;
+    color: #333;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    color: #1a5b8d;
+}
+
+.section p {
+    font-size: 1.25rem;
+}
+
+/* Slideshow Container */
+.schematic-slideshow {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    height: 500px; /* Set the height to be fixed */
+}
+
+/* Individual Items in the Slideshow */
+.slideshow-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Ensure the container takes up the full height of the slideshow */
+}
+
+.slideshow-item {
+    width: 100%;
+    max-width: 900px;
+    display: none;
+    transition: all 0.5s ease-in-out;
+    object-fit: contain; /* Ensures that the images fit within the container without distortion */
+    height: 100%; /* Make the images fill the container */
+}
+
+/* Active Item */
+.slideshow-item.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Hover Effect - Pop-out for Images */
+.slideshow-item:hover {
+    transform: scale(1.2); /* Increase size when hovered */
+    z-index: 2; /* Make hovered image appear above others */
+    opacity: 1; /* Ensure the image is fully visible when hovered */
+}
+
+/* Buttons */
+.slideshow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slideshow-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* How Does It Work Section Styling */
+#how-it-works {
+    margin-top: 0px;
+    padding: 60px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Hoefler Text', Georgia, serif;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+/* Section Header Styling */
+#how-it-works h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Description Section */
+#how-it-works .description {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#how-it-works .description p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Key Principles Layout - Flexbox for Horizontal Layout */
+#how-it-works .principles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#how-it-works .left-principle,
+#how-it-works .center-principle,
+#how-it-works .right-principle {
+    width: 30%;
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+#how-it-works .left-principle h4,
+#how-it-works .center-principle h4,
+#how-it-works .right-principle h4 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+#how-it-works .left-principle p,
+#how-it-works .center-principle p,
+#how-it-works .right-principle p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+#how-it-works .left-principle:hover,
+#how-it-works .center-principle:hover,
+#how-it-works .right-principle:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Schematic Image Styling */
+.sateg-schematic {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sateg-schematic-img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sateg-schematic-img:hover {
+    transform: scale(1.05);
+}
+/* Applications Section*/
+.applications-section {
+    text-align: center;
+    padding: 40px 10%;
+    background-color: white;
+}
+
+.applications-section h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #003366; /* Adjust to match the branding */
+}
+
+.applications-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.application {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.application:hover {
+    transform: translateY(-5px);
+}
+
+.application img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.application h4 {
+    font-size: 18px;
+    margin-top: 12px;
+    color: #003366;
+}
+
+.application p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+}
+
+
+/*Publications Page */
+
+.publications-section {
+    text-align: center;
+    padding: 60px 10%;
+    background-color: #f8f9fa;
+}
+
+.publications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.publication {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.publication h4 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #003366;
+}
+
+.publication a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.publication a:hover {
+    text-decoration: underline;
+}
+
+/* Thumbnail Image Styling */
+.publications-container,
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.publication,
+.pdf-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.publication-thumbnail,
+.publication-thumbnail {
+    width: 80px; /* Set a fixed width for the thumbnails */
+    height: 80px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fits within the container */
+    border-radius: 4px;
+}
+
+.publication h4,
+.pdf-item h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #003366;
+    text-align: center;
+}
+
+.publication a,
+.pdf-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.publication a:hover,
+.pdf-item a:hover {
+    text-decoration: underline;
+}
+/* PDF Repository */
+.pdf-repository-section {
+    text-align: center;
+    padding: 60px 10%;
+    background-color: #f0f0f0;
+}
+
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pdf-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-item h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #003366;
+}
+
+.pdf-item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.pdf-item a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input, form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #1a5b8d;
+    padding: 12px 24px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #174b71;
+}
+/* Footer */
+footer {
+    background-color: #1a5b8d;
+    color: white;
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide navbar on smaller screens for mobile-friendly design */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+}
