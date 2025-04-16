@@ -135,7 +135,7 @@
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact Us</h2>
-            <form action="/submit_form.php" method="POST">
+            <form action="https://formspree.io/f/xqapjroj" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -143,9 +143,41 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
                 <button type="submit">Send Message</button>
+                <input type="text" name="_gotcha" style="display:none">
             </form>
         </div>
+        <!-- Confirmation Message (styled and includes logo) -->
+        <div id="form-success" class="form-success">
+          <img src="images/sateglogo_v3.png" alt="SATEG Corp Logo" class="success-logo">
+              <p>Thank you! Your message has been sent successfully. We’ll be in touch soon.</p>
+        </div>
     </section>
+
+<!-- Script to show confirmation message -->
+    <script>
+      const form = document.getElementById('contact-form');
+      const successMsg = document.getElementById('form-success');
+    
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+    
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+    
+        if (response.ok) {
+          form.reset();
+          successMsg.style.display = 'block';
+        } else {
+          alert('Oops! Something went wrong. Please try again later.');
+        }
+      });
+    </script>
     
     <!-- Footer -->
     <footer>
